@@ -35,6 +35,8 @@
     font-weight:400;
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
+    word-break:keep-all;
+    overflow-wrap:break-word;
   }
 
   .display{ font-family:'Space Grotesk','Pretendard Variable',sans-serif; }
@@ -204,10 +206,22 @@
   }
 
   .day-head h2{
+    display:flex;
+    align-items:baseline;
+    gap:0.85rem;
     font-family:'Space Grotesk',sans-serif;
     font-weight:600;
     font-size:clamp(1.5rem,3vw,2rem);
     color:var(--white);
+  }
+
+  .date-dow{
+    font-family:'IBM Plex Mono',monospace;
+    font-weight:400;
+    font-size:0.78rem;
+    letter-spacing:0.18em;
+    color:var(--muted);
+    padding-bottom:0.15em;
   }
 
   .day-note{
@@ -410,6 +424,8 @@
     .hero{ min-height:86vh; padding-top:12vh; }
     main{ padding-left:8vw; padding-right:6vw; }
     .event{ padding-left:2.8rem; }
+    .day-head{ flex-wrap:wrap; }
+    .day-head h2{ white-space:nowrap; }
     .day-note{ margin-left:0; width:100%; }
   }
 
@@ -443,7 +459,7 @@
     <section class="day" id="day1">
       <div class="day-head">
         <span class="day-index mono">DAY 01</span>
-        <h2>7월 28일 화요일</h2>
+        <h2>07.28<span class="date-dow">화요일</span></h2>
         <span class="day-note">104동 E205 · 112동 I101</span>
       </div>
 
@@ -546,7 +562,7 @@
     <section class="day" id="day2">
       <div class="day-head">
         <span class="day-index mono">DAY 02</span>
-        <h2>7월 29일 수요일</h2>
+        <h2>07.29<span class="date-dow">수요일</span></h2>
         <span class="day-note">106동 501-10</span>
       </div>
 
